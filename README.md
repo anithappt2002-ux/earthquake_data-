@@ -148,3 +148,180 @@ Contributions are welcome! Feel free to fork and improve this project.
 This project is created for **educational purposes only**.
 
 ---
+
+
+
+# 🌍 Earthquake Data Analysis (Program-Based)
+
+## 📌 Overview
+
+This project focuses on **Earthquake Data Analysis using Python**, aiming to clean, analyze, and visualize historical seismic data. It helps uncover meaningful patterns in earthquake **magnitude, depth, location, and occurrence over time**.
+
+The project demonstrates a complete **data analytics workflow**, from preprocessing to visualization, with optional database integration for scalability.
+
+---
+
+## 🎯 Objectives
+
+* Load and preprocess earthquake dataset
+* Perform exploratory data analysis (EDA)
+* Visualize trends and patterns using graphs
+* Analyze relationships between key variables
+* (Optional) Store processed data in MySQL
+
+---
+
+## 🛠️ Technologies Used
+
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* SQLAlchemy (MySQL integration)
+
+---
+
+## ⚙️ Program Workflow
+
+### 🔹 Step 1: Import Libraries
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+
+---
+
+### 🔹 Step 2: Load Dataset
+
+```python
+df = pd.read_csv("earthquake.csv")
+df.head()
+```
+
+Loads the dataset into a Pandas DataFrame for analysis.
+
+---
+
+### 🔹 Step 3: Data Preprocessing
+
+```python
+df.dropna(inplace=True)
+df['date'] = pd.to_datetime(df['date'])
+df = df[df['mag'] > 0]
+```
+
+* Removes missing values
+* Converts date column to datetime format
+* Filters invalid magnitude values
+
+---
+
+### 🔹 Step 4: Feature Engineering
+
+```python
+df['year'] = df['date'].dt.year
+```
+
+Extracts year for time-based trend analysis.
+
+---
+
+### 🔹 Step 5: Year-wise Analysis
+
+```python
+yearly = df['year'].value_counts().sort_index()
+yearly.plot()
+plt.title("Earthquake Trend")
+plt.show()
+```
+
+Displays how earthquake frequency changes over time.
+
+---
+
+### 🔹 Step 6: Magnitude Distribution
+
+```python
+sns.histplot(df['mag'], bins=30)
+plt.title("Magnitude Distribution")
+plt.show()
+```
+
+Shows the distribution of earthquake magnitudes.
+
+---
+
+### 🔹 Step 7: Depth vs Magnitude
+
+```python
+plt.scatter(df['depth_km'], df['mag'])
+plt.xlabel("Depth")
+plt.ylabel("Magnitude")
+plt.show()
+```
+
+Visualizes the relationship between depth and earthquake intensity.
+
+---
+
+### 🔹 Step 8: Database Storage (Optional)
+
+```python
+from sqlalchemy import create_engine
+
+engine = create_engine("mysql+pymysql://root:password@localhost/earthquake_project")
+df.to_sql("earthquakes", con=engine, if_exists="replace", index=False)
+```
+
+Stores cleaned data into a MySQL database for further use.
+
+---
+
+## 📊 Output
+
+* 📈 Line Graph → Earthquake trends over time
+* 📊 Histogram → Magnitude distribution
+* 🔵 Scatter Plot → Depth vs Magnitude
+
+---
+
+## 🔍 Key Insights
+
+* Earthquakes are concentrated in specific geographic zones
+* High-magnitude earthquakes are rare but highly impactful
+* Increase in recorded events is influenced by improved detection technology
+* Depth plays a critical role in determining earthquake impact
+
+---
+
+## 🚀 How to Run
+
+```bash
+pip install pandas numpy matplotlib seaborn sqlalchemy pymysql
+jupyter notebook
+```
+
+---
+
+## 🔮 Future Scope
+
+* Machine learning-based earthquake prediction
+* Real-time data integration using APIs
+* Interactive dashboards (Streamlit / Power BI)
+* Early warning and alert systems
+
+---
+
+## 📜 License
+
+This project is intended for **educational purposes only**.
+
+---
+
+
+
+
