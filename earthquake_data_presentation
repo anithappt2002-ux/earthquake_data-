@@ -1,0 +1,68 @@
+🎯 Slide 1: Title
+
+🌍 Earthquake Data Analysis
+
+Data Science Project
+Your Name
+Date
+📌 Slide 2: Project Overview
+Analysis of historical earthquake data (2150 BC – 2019 AD)
+Understand seismic activity patterns
+Convert raw data into meaningful insights
+🎯 Slide 3: Objectives
+Analyze earthquake frequency over time
+Identify high-risk regions
+Study magnitude & depth relationships
+Support disaster preparedness
+📂 Slide 4: Dataset
+Source: NOAA
+Features:
+Date & Time
+Latitude & Longitude
+Magnitude
+Depth
+Location
+⚙️ Slide 5: Tools Used
+Python
+Pandas, NumPy
+Matplotlib, Seaborn
+Jupyter Notebook
+MySQL (optional)
+🔹 Slide 6: Data Preprocessing
+Removed missing values
+Converted date format
+Filtered invalid data
+Handled outliers
+🔍 Slide 7: Exploratory Data Analysis
+Year-wise earthquake trends
+Region-wise frequency
+Magnitude distribution
+Depth vs magnitude
+📊 Slide 8: Visualization
+Line chart → Trend over time
+Histogram → Magnitude distribution
+Scatter plot → Depth vs Magnitude
+Heatmap → Correlation
+📈 Slide 9: Key Insights
+Earthquakes occur in tectonic zones
+High magnitude = rare but impactful
+Increase due to better detection
+Depth affects damage
+💾 Slide 10: Database (Optional)
+Stored data in MySQL
+Used SQLAlchemy
+Enables scalable analysis
+🚀 Slide 11: Real-World Impact
+Identifies high-risk zones
+Supports disaster management
+Helps governments & researchers
+🔮 Slide 12: Future Scope
+Machine learning prediction
+Real-time data
+Dashboards
+Alert systems
+📜 Slide 13: Conclusion
+Data analytics helps understand earthquakes
+Improves preparedness and decision-making
+🙏 Slide 14: Thank You
+Questions?
